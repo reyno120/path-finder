@@ -1,0 +1,11 @@
+.slide-enter {
+    transform: translateY(-10px);
+}
+.slide-enter-active {
+    transition: transform 0.5s;
+    transform: translateY(0);
+
+}
+.slide-enter-done {
+    transform: translateY(0);
+}
