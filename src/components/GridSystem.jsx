@@ -49,6 +49,9 @@ class GridSystem extends Component {
             case 'hammer':
                 grid[row][column] = (grid[row][column] === 'gray' ? 'white' : grid[row][column]);
                 break;
+
+            default:
+                break;
         }
 
         this.setState({grid: grid});
@@ -71,9 +74,8 @@ class GridSystem extends Component {
                     adjacencyList.sort((a, b) => a.weight - b.weight);
 
                     if(currentNode.adjNodes[i].color === 'red') {
-                        var redFlag = currentNode.adjNodes[i];
+                        redFlag = currentNode.adjNodes[i];
                         found = true;
-                        console.log("found");
                     }
                 }
             }
@@ -83,7 +85,7 @@ class GridSystem extends Component {
             var path = [];
             currentNode = redFlag.predecessor;
 
-            while(currentNode.color != 'green') { 
+            while(currentNode.color !== 'green') { 
                 path.unshift(currentNode);
                 currentNode = currentNode.predecessor; 
             }
@@ -163,7 +165,7 @@ class GridSystem extends Component {
                         return (
                             array.map((value, column) => {
                                 return (
-                                    <CSSTransition in={this.state.grid[row][column] === 'blue' ? true : false} timeout={500} classNames="slide">
+                                    <CSSTransition in={this.state.grid[row][column] === 'blue' ? true : false} timeout={500} classNames="slide" key={(row * this.state.grid[0].length) + column}>
                                         <div 
                                             style={{width: '15px', height: '15px', borderColor: this.props.colors.mainSecondaryColor, border: 'solid .5px', borderRadius: '3px', display: 'inline-block',
                                                     backgroundColor: this.state.grid[row][column]

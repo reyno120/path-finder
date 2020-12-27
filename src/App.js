@@ -71,9 +71,6 @@ class App extends Component {
       palette: {
         primary: {
           main: colors.mainPrimaryColor
-        },
-        third: {
-          main: colors.mainThirdColor
         }
       }
     });
@@ -82,7 +79,6 @@ class App extends Component {
       <div className="App" style={{backgroundColor: colors.mainPrimaryColor}}> 
         <ThemeProvider theme={theme}>
           <header className="App-header">
-
             <Grid container>
               <Grid item xs={4}></Grid>
               <Grid item xs={4}>

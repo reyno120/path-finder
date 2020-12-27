@@ -19,7 +19,7 @@ class Selectors extends Component {
         return (  
             <div>
                 <ThemeProvider theme={this.props.theme}>
-                    <Button color="third" style={{width: '50px', backgroundColor: this.state.startButtonColor}} variant="outlined" onClick={() => {
+                    <Button style={{width: '50px', backgroundColor: this.state.startButtonColor}} variant="outlined" onClick={() => {
                         this.props.changeSelector('start');
                         this.setState({startButtonColor: 'lightgray'});
                         this.setState({finishButtonColor: 'white'});

@@ -48,7 +48,7 @@ function MakeList(array) {
                 current.adjNodes.push(right);
             }
             var left = listOfNodes[(row * numCols) + (col - 1)];
-            if(col != 0 && left !== undefined) {
+            if(col !== 0 && left !== undefined) {
                 current.adjNodes.push(left);
             }
 
@@ -58,7 +58,7 @@ function MakeList(array) {
             }
 
             var bottom = listOfNodes[((row + 1) * numCols) + col];
-            if(row != numRows - 1 && bottom !== undefined) {
+            if(row !== numRows - 1 && bottom !== undefined) {
                 current.adjNodes.push(bottom);
             }
         }
